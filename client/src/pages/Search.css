@@ -1,0 +1,28 @@
+.book-area {
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.title-info {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-desc {
+    display: flex;
+    width: 100%;
+}
+
+.author-name {
+    display: flex;
+}
