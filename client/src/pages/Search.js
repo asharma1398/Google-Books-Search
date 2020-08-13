@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import API from "../utils/API"
-import { useLocation } from "react-router-dom";
 import "./Search.css"
 
 function Search() {
@@ -21,8 +20,24 @@ function Search() {
 
     const handleClick = (id) => {
         console.log(id);
-        
+        let book = books.find(item => item.id === id)
+
+        console.log(book);
+        let finalBook = {
+            title: book.volumeInfo.title,
+            authors: book.volumeInfo.authors[0],
+            description: book.volumeInfo.description,
+            image: book.volumeInfo.imageLinks.thumbnail,
+            link: book.volumeInfo.infoLink
+        }
+        API.saveBook(finalBook).then(function (response){
+            console.log(response)
+        }).catch(err => {
+            throw err 
+        })
+
     }
+
     return (
         <>
             <div class="jumbotron container">
@@ -72,7 +87,7 @@ function Search() {
                                 <div className="button-info">
                                     <button style={{ marginRight: "10px" }}><a href={book.volumeInfo.infoLink} target="_blank">View</a></button>
 
-                                    <button href="#" id={book.id} onClick={() => handleClick(book.id)}>Saved</button>
+                                    <button href="#" id={book.id} onClick={() => handleClick(book.id)}>Save</button>
                                 </div>
                             </div>
 
