@@ -1,7 +1,7 @@
 .book-area {
     display: flex;
     flex-direction: column;
-    border: solid black;
+    border: solid darkgray;
     padding: 20px;
     margin-bottom: 20px;
 }

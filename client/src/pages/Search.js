@@ -23,6 +23,7 @@ function Search() {
         let book = books.find(item => item.id === id)
 
         console.log(book);
+
         let finalBook = {
             title: book.volumeInfo.title,
             authors: book.volumeInfo.authors[0],
@@ -30,6 +31,7 @@ function Search() {
             image: book.volumeInfo.imageLinks.thumbnail,
             link: book.volumeInfo.infoLink
         }
+
         API.saveBook(finalBook).then(function (response){
             console.log(response)
         }).catch(err => {
@@ -55,7 +57,7 @@ function Search() {
                 </form>
             </div>
 
-            <div class="container-fluid">
+            <div class="container-fluid container">
                 <h2>Results</h2>
                 <div>
                     {books.map((book, index) => (
@@ -92,7 +94,7 @@ function Search() {
                             </div>
 
                             <div className="img-desc">
-                                <img src={book.volumeInfo.imageLinks.thumbnail} style={{ width: "20%", marginRight: "10px" }} />
+                                <img src={book.volumeInfo.imageLinks.thumbnail} style={{ width: "20%", marginRight: "10px", height: "200px" }} />
                                 <p>{book.volumeInfo.description}</p>
                             </div>
                         </div>
