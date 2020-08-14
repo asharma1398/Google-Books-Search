@@ -42,7 +42,7 @@ function Search() {
 
     return (
         <>
-            <div class="jumbotron container">
+            <div class="jumbotron container mt-3">
                 <h1 class="display-4">Google Books Search</h1>
                 <p class="lead">Search for and Save Books of Interest</p>
             </div>
@@ -52,7 +52,7 @@ function Search() {
                 <form onSubmit={searchGoogleBooks}>
                     <div class="form-group">
                         <input onChange={e => setSearchTerm(e.target.value)} value={searchTerm} type="text" class="form-control" />
-                        <button className="btn-primary w-25 mt-2">Search</button>
+                        <button className="btn-primary mt-2">Search</button>
                     </div>
                 </form>
             </div>

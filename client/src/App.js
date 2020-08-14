@@ -6,14 +6,19 @@ import Search from "./pages/Search";
 
 function App() {
     return (
+        <>
+        <Nav />
         <Router>
-            <main className="container-md">
-            <Nav />
+
+            
+
+            <main className="container-fluid">
             <Route exact path="/" component={Search} />
             <Route exact path="/saved" component={Saved} />
             </main>
             
         </Router>
+        </>
     )
 }
 
